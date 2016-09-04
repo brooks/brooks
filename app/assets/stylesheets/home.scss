@@ -4,6 +4,13 @@
 
 body {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .banner {
@@ -56,9 +63,11 @@ body {
 
 .description {
   color: white;
-  font-size: 1.2em;
+  font-size: 1.6em;
   text-align: center;
-
+  position: relative;
+  z-index: 1001;
+  top: 30px;
 }
 
 #resume-container {
