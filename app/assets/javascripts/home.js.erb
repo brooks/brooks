@@ -1,0 +1,16 @@
+$(document).ready(function(){
+  $('#resume-container').click(function(){
+    var assetPath = "<%= asset_path('bmason_resume.pdf') %>"
+    window.open(assetPath);
+  });
+
+  $('.banner').hover(
+    function() {
+      $('.credit').show()
+      $('.credit').addClass('animated fadeIn');
+    },
+    function() {
+    }
+  );
+
+});
