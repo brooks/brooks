@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
 
+  protect_from_forgery with: :null_session
   before_filter :authorize_slack
 
   def index
