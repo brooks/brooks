@@ -1,14 +1,20 @@
 class TweetsController < ApplicationController
 
   protect_from_forgery with: :null_session
-  before_filter :authorize_slack
+  before_action :authorize_slack
 
   def index
     @tweets = $twitter.user_timeline
   end
 
   def create
-    $twitter.update(params[:text][6..-1])
+    tweet = $twitter.update(params[:text][6..-1])
+    if tweet.is_a? Twitter::Tweet
+      response = "Success! You tweeted #{tweet.text}"
+    else
+      response = "Error"
+    end
+    render json: { text: response }.to_json
   end
 
   def authorize_slack

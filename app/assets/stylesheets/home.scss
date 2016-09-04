@@ -135,17 +135,15 @@ body {
   color: gray;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
 
-  .icons, .pdf-bar {
+  .icons {
     width: 100%;
     font-size: .8em;
     text-align: center;
     display: block;
   }
-
-  .pdf-bar {
-    display:none;
-
+  .credit, .footer {
+    display: none;
   }
 }
