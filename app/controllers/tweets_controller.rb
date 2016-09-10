@@ -17,6 +17,13 @@ class TweetsController < ApplicationController
     render json: { text: response }.to_json
   end
 
+  def destroy
+    status_id = params[:status_id]
+    $twitter.destroy_status(status_id)
+  end
+
+  private
+
   def authorize_slack
     redirect_to root_path unless params[:token] == ENV['SLACK_TOKEN']
   end
